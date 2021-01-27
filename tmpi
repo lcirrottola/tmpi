@@ -115,7 +115,7 @@ else
     echo 0 > /tmp/tmpi.lock
 
     # re-execute ourself to spawn of the processes.
-    echo mpirun -np ${processes} ${self} runmpi "${@}"
-    mpirun -np ${processes} ${self} runmpi "${@}"
+    echo mpirun -oversubscribe -np ${processes} ${self} runmpi "${@}"
+    mpirun -oversubscribe -np ${processes} ${self} runmpi "${@}"
 fi
 
